@@ -1,25 +1,43 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
+<html lang="en">
     <head>
-        <title>Timesheet Entry</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="main.css">
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>CTC Timesheet</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="bootstrap/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="signin.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
     </head>
     <body>
-        <div id="title">
-            <h1>CTC Timesheet Entry</h1>
-        </div>
-        <div>
-            <h1>  </h1>
-            <p><h3>Employee Login <input type="submit" value="Login" name="empLoginBtn"  onclick="location.href='employeeLogin.jsp'"/> </h3>
-            <p><h3>Supervisor Login <input type="submit" value="Login" name="supLoginBtn" /> </h3>
-            <p><h3>HR Login <input type="submit" value="Login" name="hrLoginBtn" /> </h3>
+        <div class="container">
+            
+                <form class="form-signin">
+                    <div class="form-signin-heading text-center">
+                    <h1>CTC Time</h1>
+                    </div>
+                        <input class="btn btn-lg btn-primary btn-block" type="button" value="Employee Login" name="empLoginBtn"  onclick="location.href='empLogin.jsp'"/>
+                        <input class="btn btn-lg btn-primary btn-block" type="button" value="Supervisor Login" name="supLoginBtn" />
+                        <input class="btn btn-lg btn-primary btn-block" type="button" value="HR Login" name="hrLoginBtn" />
+                </form>
+            
         </div>
     </body>
 </html>

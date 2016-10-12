@@ -3,4 +3,14 @@
     Author     : Gregory
 */
 /******** Main Styles ********/
-body {background-color: lightblue;}
+body    {background-color: lightblue;
+         text-align: center;
+         margin: 10px}
+#title {text-align: center}
+#content {text-align: center;}
+#wrapper{text-align: center; background-color: lightblue;}
+#td-R{text-align: right;}
+
+table.center{margin-left: auto; margin-right: auto;}
+
+p {text-align: center;}
