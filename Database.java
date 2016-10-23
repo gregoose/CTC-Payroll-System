@@ -18,8 +18,6 @@ public class Database {
             Statement statement = connection.createStatement();
             statement.executeUpdate
             ("use Times");
-            
-            
         }
         
         catch (Exception ex) {
@@ -34,12 +32,13 @@ public class Database {
         return date;
     }
     
-    public static void clockIn(Connection con, String time){
+    public static void dateCheck(Connection con){
+        //String date;
         try {
             Statement statement = con.createStatement();
-            statement.executeUpdate
-            ("insert into Hours (timeIn) values ('" + time + "')"); 
-            statement = con.createStatement();
+            statement.executeQuery(
+                    "select Date from Hours"
+            );
             statement.executeUpdate
             ("insert into Hours (Date) values ('" + getDate() + "')"); 
         }
@@ -47,13 +46,14 @@ public class Database {
         catch (Exception ex) {
             ex.printStackTrace();
 	}
+        //Return date;
     }
     
-    public static void mealOut(Connection con, String time){
+    public static void clockIn(Connection con, int ID, String Date, String Time){
         try {
             Statement statement = con.createStatement();
             statement.executeUpdate
-            ("insert into Hours (mealOut) values ('" + time + "')"); 
+            ("insert into Hours (ID, Date, Time, punchType) values (" + ID + ", '" + Date + "', '" + Time + "', 'Clock In')");
         }
         
         catch (Exception ex) {
@@ -61,11 +61,11 @@ public class Database {
 	}
     }
     
-    public static void mealIn(Connection con, String time){
+    public static void mealOut(Connection con, int ID, String Date, String Time){
         try {
             Statement statement = con.createStatement();
             statement.executeUpdate
-            ("insert into Hours (mealIn) values ('" + time + "')"); 
+            ("insert into Hours (ID, Date, Time, punchType) values (" + ID + ", '" + Date + "', '" + Time + "', 'Meal Out')");
         }
         
         catch (Exception ex) {
@@ -73,11 +73,23 @@ public class Database {
 	}
     }
     
-    public static void clockOut(Connection con, String time){
+    public static void mealIn(Connection con, int ID, String Date, String Time){
         try {
             Statement statement = con.createStatement();
             statement.executeUpdate
-            ("insert into Hours (timeOut) values ('" + time + "')"); 
+            ("insert into Hours (ID, Date, Time, punchType) values (" + ID + ", '" + Date + "', '" + Time + "', 'Meal In')");
+        }
+        
+        catch (Exception ex) {
+            ex.printStackTrace();
+	}
+    }
+    
+    public static void clockOut(Connection con, int ID, String Date, String Time){
+        try {
+            Statement statement = con.createStatement();
+            statement.executeUpdate
+            ("insert into Hours (ID, Date, Time, punchType) values (" + ID + ", '" + Date + "', '" + Time + "', 'Clock Out')"); 
         }
         
         catch (Exception ex) {
